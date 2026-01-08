@@ -4,7 +4,7 @@ This Jupyter Notebook provides a comprehensive analysis of oceanographic conditi
 
 ## 📚 Course Information
 **Institution:** École des Ponts  
-**Project:** Marine Energy Assessment 2025  
+**Project:** Marine Energy 2025-2026  
 **Region:** South Africa (40°S to 29°S, 14°E to 34°E)
 
 ## 🎯 Learning Objectives
