@@ -25,7 +25,7 @@ This Jupyter Notebook provides a comprehensive analysis of oceanographic conditi
 
 1. **Clone this repository:**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/Marine-Energy-South-Africa.git
+   git clone https://github.com/Pablo.Tassi/Marine-Energy-South-Africa.git
    cd Marine-Energy-South-Africa
    ```
 
@@ -107,7 +107,7 @@ This material is provided for **educational purposes only**.
 
 ## 👥 Authors
 
-École des Ponts - Marine Data Course 2025
+Pablo Tassi - Marine Energy Project - Course 2025-2026
 
 ## 📧 Contact
 
