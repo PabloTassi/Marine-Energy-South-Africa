@@ -1,0 +1,15 @@
+# Data files (students will download these from Copernicus Marine Service)
+data/*.nc
+data/*.zip
+
+# Generated animations
+img/animations/*.gif
+
+# Python cache
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# System files
+.DS_Store
+Thumbs.db
