@@ -137,7 +137,7 @@ Pablo Tassi - Marine Energy Project - Course 2025-2026
 
 ## 📧 Contact
 
-For questions or issues, please contact [your email or create GitHub issues]
+For questions or issues, please contact <pablo.tassi@enpc.fr> or create GitHub issues
 
 ---
 
