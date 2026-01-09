@@ -69,20 +69,12 @@ Run this command once to save your credentials:
 ```bash
 copernicusmarine login
 ```
-Enter your Copernicus Marine username and password when prompted.
+Enter your Copernicus Marine username and password when prompted: create a free Copernicus Marine account at: https://data.marine.copernicus.eu/register
 
 ### **Step 7: Upgrade the Toolbox**
 To get the latest version of the Copernicus Marine Toolbox as installed in the previous step and considering an environment whose name is `copernicusmarine`, then run the following command:
 ```bash
 mamba update --name copernicusmarine copernicusmarine --yes
-```
-
-## 📊 Data Download Prerequisites
-
-1. **Create a free Copernicus Marine account** at: https://data.marine.copernicus.eu/register
-2. **Activate your environment** (if not already active):
-```bash
-   mamba activate copernicusmarine
 ```
 
 ## 🚀 Usage
