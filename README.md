@@ -24,35 +24,32 @@ This Jupyter Notebook provides a comprehensive analysis of oceanographic conditi
 ## 📦 Installation
 
 ### **Step 1: Clone this repository**
+Download and install [Git for Windows](https://git-scm.com/install/windows)
 ```bash
 git clone https://github.com/Pablo.Tassi/Marine-Energy-South-Africa.git
 cd Marine-Energy-South-Africa
 ```
 
-### **Step 2: Install Mamba (recommended) or Conda**
+### **Step 2: Install Mamba (recommended)**
 
-**Option A - Miniforge (includes Mamba)** - Recommended:
+**Miniforge (includes Mamba)** - Recommended:
 1. Download Miniforge from: https://github.com/conda-forge/miniforge
 2. Install following the instructions for your operating system
 3. Mamba will be available by default
 
-**Option B - Using existing Conda:**
+
+### **Step 3: Install the Copernicus Marine Toolbox**
+
+1. Open the *Miniforge Prompt* to create a new environment (could be anything, but let's call it `copernicusmarine`) and install the Copernicus Marine Toolbox from conda-forge:
 ```bash
-conda install -n base conda-forge::mamba
+mamba create --name copernicusmarine conda-forge::copernicusmarine --yes
+```
+2. Activate the newly created environment (called `copernicusmarine`) to use the Toolbox
+```bash
+mamba activate copernicusmarine
 ```
 
-### **Step 3: Create a dedicated environment**
-```bash
-mamba create -n marine-energy python=3.11
-mamba activate marine-energy
-```
-
-### **Step 4: Install the Copernicus Marine Toolbox**
-```bash
-mamba install -c conda-forge copernicusmarine
-```
-
-### **Step 5: Install additional required packages**
+### **Step 4: Install additional required packages**
 ```bash
 mamba install -c conda-forge numpy pandas xarray matplotlib cartopy cmocean scipy imageio netCDF4
 ```
@@ -62,88 +59,24 @@ Or install everything in one command:
 mamba install -c conda-forge copernicusmarine numpy pandas xarray matplotlib cartopy cmocean scipy imageio netCDF4
 ```
 
-### **Step 6: Verify installation**
+### **Step 5: Verify installation**
 ```bash
 copernicusmarine --version
 ```
 
-## 📊 Data Download
-
-### **Prerequisites**
-1. **Create a free Copernicus Marine account** at: https://data.marine.copernicus.eu/register
-2. **Activate your environment** (if not already active):
-   ```bash
-   mamba activate marine-energy
-   ```
-
-### **Configure your credentials**
+### **Step 6: Configure your credentials**
 Run this command once to save your credentials:
 ```bash
 copernicusmarine login
 ```
 Enter your Copernicus Marine username and password when prompted.
 
-### **Download the required datasets**
+## 📊 Data Download Prerequisites
 
-The notebook requires oceanographic data for the South Africa region (2025). You can download them using the Copernicus Marine Toolbox:
-
-#### **1. Sea Surface Height (SSH)**
+1. **Create a free Copernicus Marine account** at: https://data.marine.copernicus.eu/register
+2. **Activate your environment** (if not already active):
 ```bash
-copernicusmarine subset \
-  --dataset-id cmems_obs-sl_glo_phy-ssh_nrt_allsat-l4-duacs-0.25deg_P1D \
-  --variable adt \
-  --start-datetime 2025-01-01 --end-datetime 2025-12-31 \
-  --minimum-longitude 14 --maximum-longitude 34 \
-  --minimum-latitude -40 --maximum-latitude -29 \
-  --output-directory ./data \
-  --output-filename SouthAfrica_SSH_2025.nc
-```
-
-#### **2. Ocean Currents**
-```bash
-copernicusmarine subset \
-  --dataset-id cmems_mod_glo_phy_anfc_0.083deg_P1D-m \
-  --variable uo --variable vo \
-  --start-datetime 2025-01-01 --end-datetime 2025-12-31 \
-  --minimum-longitude 14 --maximum-longitude 34 \
-  --minimum-latitude -40 --maximum-latitude -29 \
-  --output-directory ./data \
-  --output-filename SouthAfrica_Currents_2025.nc
-```
-
-#### **3. Wave Parameters**
-```bash
-copernicusmarine subset \
-  --dataset-id cmems_mod_glo_wav_anfc_0.083deg_PT3H-i \
-  --variable VHM0 --variable VTPK \
-  --start-datetime 2025-01-01 --end-datetime 2025-12-31 \
-  --minimum-longitude 14 --maximum-longitude 34 \
-  --minimum-latitude -40 --maximum-latitude -29 \
-  --output-directory ./data \
-  --output-filename SouthAfrica_Waves_2025.nc
-```
-
-#### **4. Ocean Color (Suspended Particulate Matter)**
-```bash
-copernicusmarine subset \
-  --dataset-id cmems_obs-oc_glo_bgc-plankton_nrt_l4-multi-4km_P1D \
-  --variable SPM --variable KD490 --variable ZSD \
-  --start-datetime 2025-01-01 --end-datetime 2025-12-31 \
-  --minimum-longitude 14 --maximum-longitude 34 \
-  --minimum-latitude -40 --maximum-latitude -29 \
-  --output-directory ./data \
-  --output-filename SouthAfrica_OceanColor_2025.nc
-```
-
-### **Alternative: Manual Download**
-You can also manually download data from the [Copernicus Marine Data Store](https://data.marine.copernicus.eu):
-1. Search for the datasets by their IDs (listed above)
-2. Use the web interface to subset and download
-3. Place the downloaded `.nc` files in the `data/` folder
-
-**Note:** The dataset IDs provided above are examples. Please verify the exact dataset IDs in the Copernicus Marine catalogue using:
-```bash
-copernicusmarine describe --include-datasets
+   mamba activate copernicusmarine
 ```
 
 ## 🚀 Usage
